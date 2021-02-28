@@ -9,7 +9,7 @@ class PropertyValueController {
 
     const property_value = await getProperyValueByMetersService.execute({ meters });
 
-    return response.json(property_value);
+    return response.json({ property_value });
   }
 }
 
