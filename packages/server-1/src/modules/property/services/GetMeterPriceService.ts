@@ -1,13 +1,14 @@
-import AppError from '@shared/errors/AppError';
 import { inject, injectable } from 'tsyringe';
+import AppError from '@shared/errors/AppError';
 import IMeterPriceRepository from '../repositories/IMeterRepository';
 
 @injectable()
 class GetMeterPriceService {
   constructor(
     @inject('MeterPriceRepository')
-    private meterPriceRepository: IMeterPriceRepository
+    private meterPriceRepository: IMeterPriceRepository,
   ) {}
+
   public async execute(): Promise<number> {
     const price_meter = await this.meterPriceRepository.getMeterPrice();
 
