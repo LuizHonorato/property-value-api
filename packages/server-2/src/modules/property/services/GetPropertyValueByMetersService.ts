@@ -11,11 +11,11 @@ interface IApiResponse {
 
 class GetPropertyValueByMetersService {
   public async execute({ meters }: IRequest): Promise<number> {
-    if (meters > 10 || meters < 10000) {
+    if (meters < 10 || meters > 10000) {
       throw new AppError('Number of meters must be between 10 and 10000.');
     }
 
-    const response = await api.post<IApiResponse>('/get-price-meter', { meters });
+    const response = await api.get<IApiResponse>('/get-price-meter');
 
     if (!response.data) {
       throw new AppError('There was an error processing your request');
