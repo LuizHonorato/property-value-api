@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  server-1:
+    build: .
+    volumes:
+      - .:/home/node/server-1
+      - /home/node/server-1/node_modules
+      - /home/node/server-1/dist
+    networks:
+      - server1-network
+    container_name: server-1
+    ports:
+      - 3001:3001
+
+
+networks:
+  server1-network:
+    driver: bridge
