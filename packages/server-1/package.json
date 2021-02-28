@@ -9,7 +9,8 @@
     "build": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./dist",
     "start:server": "node dist/shared/infra/http/server.js",
     "lint": "eslint src --ext ts",
-    "tsc": "tsc --noEmit"
+    "tsc": "tsc --noEmit",
+    "test": "jest"
   },
   "engines": {
     "node": ">=12.3.1"
