@@ -47,7 +47,7 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSH_KEY }}
           source: "."
-          target: "app/property-value-api"
+          target: "~/app/property-value-api"
       
 
       
