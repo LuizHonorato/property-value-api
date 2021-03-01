@@ -23,11 +23,11 @@ Esta Aplicação foi criada com a utilização das seguintes ferramentas:
  - Rode o comando npm install ou yarn para instalar as dependências do repositório.
  - Navegue até a pasta packages/server-1.
  - Rode o comando yarn build
- - Rode o comando node dist/shared/infra/http/server.js para executar o server-1
+ - Rode o comando yarn start:server para executar o server-1
  - A API 1 estará disponível no endereço http://localhost:3001/api/properties/get-price-meter
  - Navegue até a pasta packages/server-2.
  - Rode o comando yarn build
- - Rode o comando node dist/shared/infra/http/server.js para executar o server-1
+ - Rode o comando yarn start:server para executar o server-1
  - A API 1 estará disponível no endereço http://localhost:3002/properties/get-property-value
  
 # Servidor
