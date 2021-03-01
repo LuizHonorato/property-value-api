@@ -52,7 +52,7 @@ jobs:
       - name: Restart servers
         uses: JimCronqvist/action-ssh@master
         with:
-          hosts: ${{ secrets.SSH_HOST }}
+          hosts: deploy@167.172.143.12
           privateKey: ${{ secrets.SSH_KEY }}
           command: |
             pm2 restart server-1
