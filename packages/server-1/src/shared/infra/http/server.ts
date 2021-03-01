@@ -12,8 +12,10 @@ import '@shared/container';
 
 const app = express();
 
+const origin = process.env.NODE_ENV === 'development' ? 'http://localhost:3002' : 'http://167.172.143.12:3002';
+
 const corsOptions = {
-  origin: 'http://localhost:3002',
+  origin,
   optionsSuccessStatus: 200
 };
 

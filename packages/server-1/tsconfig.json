@@ -28,7 +28,8 @@
   },
   "exclude": [
     "node_modules",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "shared/tests"
   ],
   "include": ["src"]
 }
