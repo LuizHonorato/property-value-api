@@ -29,6 +29,6 @@ COPY --chown=node:node --from=builder /home/node/build/node_modules ./node_modul
 COPY --chown=node:node --from=builder /home/node/build/process.yml .
 COPY --chown=node:node --from=builder /home/node/build/dist ./dist
 
-EXPOSE 3001
+EXPOSE 3002
 
 CMD ["pm2-runtime", "process.yml"]
