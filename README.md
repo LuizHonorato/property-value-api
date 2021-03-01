@@ -38,6 +38,7 @@ Esta aplicação está disponibilizada online, hospedada na Digital Ocean e é a
 
 - Para acesso online foi configurado servidor Nginx com proxy reverso da porta 80 para porta 3002.
 - O server-1 na porta 3001 é acessível apenas pelo server-2.
+- Aplicação executada via PM2.
  
 # Testes
 
