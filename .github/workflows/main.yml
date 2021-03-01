@@ -49,19 +49,14 @@ jobs:
           source: "."
           target: "~/app/property-value-api"
           
-      - name: Restart server 1
+      - name: Restart servers
         uses: JimCronqvist/action-ssh@master
         with:
           hosts: ${{ secrets.SSH_HOST }}
           privateKey: ${{ secrets.SSH_KEY }}
-          command: pm2 restart server-1
-          
-      - name: Restart server 2
-        uses: JimCronqvist/action-ssh@master
-        with:
-          hosts: ${{ secrets.SSH_HOST }}
-          privateKey: ${{ secrets.SSH_KEY }}
-          command: pm2 restart server-2
+          command: |
+            pm2 restart server-1
+            pm2 restart server-2
 
 
 
