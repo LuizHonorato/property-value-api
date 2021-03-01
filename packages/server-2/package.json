@@ -7,7 +7,7 @@
   "scripts": {
     "dev:server": "ts-node-dev --inspect --respawn --transpile-only --ignore-watch node_modules -r tsconfig-paths/register src/shared/infra/http/server.ts",
     "build": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./dist",
-    "start:server": "node dist/shared/infra/http/server.js",
+    "start:server": "pm2 start dist/shared/infra/http/server.js --name=server-2",
     "lint": "eslint src --ext ts",
     "tsc": "tsc --noEmit",
     "test": "jest"
