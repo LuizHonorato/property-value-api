@@ -49,39 +49,6 @@ jobs:
           source: "."
           target: "~/app/property-value-api"
 
-      - name: Stop node process
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          port: ${{ secrets.SSH_PORT }}
-          key: ${{ secrets.SSH_KEY }}
-          run: |
-            pkill -f node
-
-      - name: Reinitialize server 1
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          port: ${{ secrets.SSH_PORT }}
-          key: ${{ secrets.SSH_KEY }}
-          run: |
-            cd /app/property-value-api/packages/server-1
-            node dist/shared/infra/http/server.js
-
-
-      - name: Reinitialize server 2
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          port: ${{ secrets.SSH_PORT }}
-          key: ${{ secrets.SSH_KEY }}
-          working-directory: packages/server-2
-          run: |
-            cd /app/property-value-api/packages/server-2
-            node dist/shared/infra/http/server.js
 
 
 
