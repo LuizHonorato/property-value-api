@@ -56,8 +56,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
-          script: |
-              pkill -f node
+          run: pkill -f node
 
       - name: Reinitialize server 1
         uses: appleboy/scp-action@master
@@ -66,10 +65,9 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
-          working-directory: packages/server-1
-          script: |
-            cd ~/app/property-value-api/packages/server-1
-            node dist/shared/infra/http/server.js
+          run: cd /app/property-value-api/packages/server-1
+          run: node dist/shared/infra/http/server.js
+
 
       - name: Reinitialize server 2
         uses: appleboy/scp-action@master
@@ -79,9 +77,8 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
           working-directory: packages/server-2
-          script: |
-            cd ~/app/property-value-api/packages/server-2
-            node dist/shared/infra/http/server.js
+          run: cd /app/property-value-api/packages/server-2
+          run: node dist/shared/infra/http/server.js
 
 
 
