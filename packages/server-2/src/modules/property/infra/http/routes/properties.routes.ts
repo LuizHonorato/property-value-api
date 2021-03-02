@@ -5,7 +5,7 @@ import PropertyValueController from '../controllers/PropertyValueController';
 const propertiesRouter = Router();
 const propertyValueController = new PropertyValueController();
 
-propertiesRouter.get('/get-property-value', celebrate({
+propertiesRouter.post('/get-property-value', celebrate({
   [Segments.BODY]: {
     meters: Joi.number().required(),
   },
