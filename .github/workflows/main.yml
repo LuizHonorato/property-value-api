@@ -48,6 +48,15 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           source: "."
           target: "~/app/property-value-api"
+          
+      - name: Restart servers
+        uses: JimCronqvist/action-ssh@master
+        with:
+          hosts: deploy@167.172.143.12
+          privateKey: ${{ secrets.SSH_KEY }}
+          command: |
+            pm2 restart server-1
+            pm2 restart server-2
 
 
 
